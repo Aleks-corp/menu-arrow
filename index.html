@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Menu Arrow</title>
+  </head>
+  <body>
+    <nav class="navigation">
+      <ul class="nav__list">
+        <span class="marker"></span>
+        <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+        <li class="nav__item">
+          <a href="#" class="nav__link">Our Portfolio</a>
+        </li>
+        <li class="nav__item"><a href="#" class="nav__link">Team</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">About Us</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">Contacts</a></li>
+      </ul>
+    </nav>
+
+    <script>
+      let marker = document.querySelector(".marker");
+      let item = document.querySelectorAll(".nav__link");
+      function Indicator(e) {
+        marker.style.top = e.offsetTop + "px";
+        marker.style.width = e.offsetWidth + "px";
+      }
+      item.forEach((link) => {
+        link.addEventListener("mousemove", (e) => {
+          Indicator(e.target);
+        });
+        link.addEventListener("focus", (e) => {
+          Indicator(e.target);
+        });
+      });
+    </script>
+  </body>
+</html>
